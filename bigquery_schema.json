@@ -1,0 +1,125 @@
+[
+  {
+    "name": "metric",
+    "type": "RECORD",
+    "mode": "REQUIRED",
+    "fields": [
+      {
+        "name": "type",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "labels",
+        "type": "RECORD",
+        "mode": "REPEATED",
+        "fields": [
+          {
+            "name": "key",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "value",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "resource",
+    "type": "RECORD",
+    "mode": "REQUIRED",
+    "fields": [
+      {
+        "name": "type",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "labels",
+        "type": "RECORD",
+        "mode": "REPEATED",
+        "fields": [
+          {
+            "name": "key",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "value",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "metric_kind",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "value_type",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "points",
+    "type": "RECORD",
+    "mode": "REPEATED",
+    "fields": [
+      {
+        "name": "interval",
+        "type": "RECORD",
+        "mode": "REQUIRED",
+        "fields": [
+          {
+            "name": "start_time",
+            "type": "RECORD",
+            "mode": "NULLABLE",
+            "fields": [
+              {
+                "name": "seconds",
+                "type": "INT64",
+                "mode": "NULLABLE"
+              },
+              {
+                "name": "nanos",
+                "type": "INT64",
+                "mode": "NULLABLE"
+              }
+            ]
+          },
+          {
+            "name": "end_time",
+            "type": "RECORD",
+            "mode": "NULLABLE",
+            "fields": [
+              {
+                "name": "seconds",
+                "type": "INT64",
+                "mode": "NULLABLE"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "value",
+        "type": "RECORD",
+        "mode": "NULLABLE",
+        "fields": [
+          {
+            "name": "int64_value",
+            "type": "INT64",
+            "mode": "NULLABLE"
+          }
+        ]
+      }
+    ]
+  }
+]
